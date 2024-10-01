@@ -32,7 +32,13 @@ This repository contains the source code for the corresponding paper.
 ## Installation
 
 
+
 ## Usage
+__TL;DR__
+```
+$ ./run.sh
+```
+
 Entry point for whole program is `run.sh` script, where the following parameters can be changed:
 - Number of Participants   - $n \in R$
 - Partition Type           - {noniid, iid, vertical}
