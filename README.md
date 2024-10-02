@@ -60,7 +60,7 @@ __Saved artifacts include__:
 - Final Model Weights - `weights.h5`
 - Clients convergence metrics - `lclmetrics.csv`
 
-These artifacts are used for visualizaiton in `visualize.ipynb`
+These artifacts are used for visualizaiton in `visualization.ipynb`
 
 
 
