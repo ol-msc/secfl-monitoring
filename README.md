@@ -1,7 +1,7 @@
 # Secure Federated Learning for Multi-Party Network Monitoring
-
 This repository contains the source code for the corresponding paper.
 
+![federated architecture](./.misc/federated_architecture_network.png)
 
 ## Structure
 ```
@@ -26,12 +26,18 @@ This repository contains the source code for the corresponding paper.
 
 ## Prerequisites
 - Python 3.11
-- Local instalation of flower from [forked repo](https://github.com/letv3/flower)
-- Shell 
+- Local `flower` from [forked repo](https://github.com/letv3/flower)
+- Shell (Bash, zsh, Fish)
 
 ## Installation
-
-
+1. Install `flower` from local directory 
+```
+    pip install -e path/to/local/flower
+```
+2. Install requirements
+```
+    pip install -r req311.txt
+```
 
 ## Usage
 __TL;DR__
@@ -89,8 +95,18 @@ privacy and security concerns.
 ## Citation
 
 ```
-
+@article{lytvyn2023secfl,
+  title={Secure Federated Learning for Multi-Party Network Monitoring},
+  author={Lytvyn, Oleksandr and Nguyen, Giang},
+  journal={},
+  volume={},
+  pages={},
+  year={},
+  publisher={},
+  doi={}
+}
 ```
 
 ## Credits
-I would like to mention the developers of Flower
+I would like to thank the Giang Nguyen and Stefan Dlugolinsky for providing the data and foundation for this research.
+Also, I would like to mention the developers of Flower framework - [adap/flower](https://github.com/adap/flower).
