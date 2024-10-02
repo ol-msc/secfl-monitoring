@@ -21,7 +21,7 @@ class DefaultConfig:
 
 
 class Config:
-    SAVE_DIR = Path(__file__).parent.joinpath("saves")
+    SAVE_DIR = Path(__file__).parent.parent.joinpath("saves")
 
     SEQUENCE_LEN = 24
     FL_ROUNDS = 10

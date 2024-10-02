@@ -1,10 +1,7 @@
-import os
-import sys
+from flwr.client import NumPyClient
 
 from config import ExpConfig
-from flwr.client import Client, ClientApp, NumPyClient
-from flwr.client.mod import secaggplus_mod
-from model import build_gru_model
+from federation.model import build_gru_model
 
 
 class FlwrClient(NumPyClient):
@@ -48,29 +45,3 @@ class FlwrClient(NumPyClient):
             len(self.x_val),
             {"mean_squared_error": mse, "mean_absolute_error": mae},
         )
-
-
-def client_fn(cid: str) -> Client:
-    CID = os.getenv("CID")
-
-    x_train, y_train = ExpConfig.PARTITIONS[int(CID)]
-    split_idx = int(len(x_train) * 0.9)
-    x_train_cid, y_train_cid = (
-        x_train[:split_idx],
-        y_train[:split_idx],
-    )
-    x_val_cid, y_val_cid = x_train[split_idx:], y_train[split_idx:]
-
-    one_client = FlwrClient(x_train_cid, y_train_cid, x_val_cid, y_val_cid)
-    return one_client.to_client()
-
-
-if ExpConfig.FL_AGGREGATION_TYPE == "secure":
-    mods = [
-        secaggplus_mod,
-    ]
-else:
-    mods = None
-
-# Flower ClientApp
-app = ClientApp(client_fn=client_fn, mods=mods)

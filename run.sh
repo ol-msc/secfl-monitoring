@@ -23,8 +23,8 @@ sleep 2
 echo "[RUNNER] Using $PARTITION_TYPE Partition Type"
 
 # Aggregation Type
-# export AGGREGATION_TYPE="regular"
- export AGGREGATION_TYPE="secure"
+export AGGREGATION_TYPE="regular"
+# export AGGREGATION_TYPE="secure"
 
 echo "[RUNNER] Using $AGGREGATION_TYPE Aggregation Type"
 
@@ -38,9 +38,9 @@ else
 fi
 
 # Start resource measurement in the background
-source ./.measure_resource.sh
-measure_resources &
-bg_pid=$!
+# source ./.measure_resource.sh
+# measure_resources &
+# bg_pid=$!
 
 echo "[RUNNER] Background Process PID: $bg_pid" 
 
@@ -48,12 +48,12 @@ echo "[RUNNER] Background Process PID: $bg_pid"
 for i in $(seq 1 $N_CLIENTS)
 do
   export CID=$((i-1)) &&
-  flower-client-app --insecure client:app &
+  flower-client-app --insecure client_app:app &
   sleep 0.1
 done
 
 echo "[RUNNER] Starting ServerApp..."
-flower-server-app --insecure server:app --verbose
+flower-server-app --insecure server_app:app --verbose
 
 
 
