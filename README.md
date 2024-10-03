@@ -86,7 +86,7 @@ between multiple organizations while addressing privacy and security concerns.
 ## Citation
 
 ```
-@article{lytvyn2023secfl,
+@article{lytvyn2024secfl,
   title={Secure Federated Learning for Multi-Party Network Monitoring},
   author={Lytvyn, Oleksandr and Nguyen, Giang},
   journal={},
