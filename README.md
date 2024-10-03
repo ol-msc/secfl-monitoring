@@ -108,5 +108,5 @@ privacy and security concerns.
 ```
 
 ## Credits
-I would like to thank the Giang Nguyen and Stefan Dlugolinsky for providing the data and foundation for this research.
-Also, I would like to mention the developers of Flower framework - [adap/flower](https://github.com/adap/flower).
+The authors thank S.D., V.T. and Á.L.G. for knowledge sharing and support.
+Also, we'd like to mention the developers of Flower framework - [adap/flower](https://github.com/adap/flower).
